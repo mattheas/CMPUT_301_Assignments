@@ -1,21 +1,27 @@
-
-
+/**
+ * This class is used to test the functionality of Task & TeamMember. First an instance of Task and TeamMember is created. 
+ * The instance of Task has no task dependency. Then the instantiaed task is assigned to the instance of TeamMember. Then 
+ * use API of classes to check if test was performed correctly. I used if-statements instead of JUnit Assert statements
+ * for sake of time and simplicity.
+ *
+ * @author Mattheas Jamieson
+ * @see Task
+ * @see TeamMember
+ * @version 1.0
+ * @since 1.0
+ */
 public class Test {
 
-    // entry into project
     public static void main(String[] args) {
-        //System.out.println("hello");
         String taskName = "task1";
         int taskEffort = 3;
         String memberName = "JohnDoe";
         
-
-        // make task and team member
+        // instantiate task and team member
         Task testTask = new Task(taskName, taskEffort);
         TeamMember testMember = new TeamMember(memberName);
 
         // assert member does not have task
-        //assertFalse(testMember.hasTask(testTask));
         if (testMember.hasTask(testTask) == false) {
             System.out.println("member does not have task");
         }
@@ -23,11 +29,9 @@ public class Test {
         // assign task to team member
         testMember.addTask(testTask);
 
+        // assert member now has task
         if (testMember.hasTask(testTask) == true) {
-            System.out.println("member has addded task");
-        }
-
-        // check it was all done correctly
-        //assertTrue(testMember.hasTask(testTask));
+            System.out.println("member has added task");
+        } 
     }
 }
