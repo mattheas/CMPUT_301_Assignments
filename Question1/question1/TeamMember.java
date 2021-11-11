@@ -48,5 +48,4 @@ public class TeamMember {
     public void deleteTask(Task task) {
         assignedTasks.remove(task);
     }
-
 }
