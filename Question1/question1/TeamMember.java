@@ -1,19 +1,10 @@
 import java.util.ArrayList;
 
 /**
- * This class represents a member of a project team. A member has a name, and can have zero, one or
- * more tasks assigned to them. 
- *
- *
- *
- *
- * This class represents a task to be completed. A task has a name and an effort estimate in days. A task
- * can have a task dependency, meaning another task must be completed before it can be completed. A task 
- * may be assigned to zero, one or multiple team members. A task must have a name and effort estimate. A
- * task dependency is optional and shall be assigned null by default if no task dependency is explicity given. 
+ * This class represents a member of a project team. A member has a name and can be assigned tasks. 
  *
  * @author Mattheas Jamieson
- * @see TeamMember
+ * @see Task
  * @see Test
  * @version 1.0
  * @since 1.0
@@ -21,7 +12,6 @@ import java.util.ArrayList;
 public class TeamMember {
     // attributes
     private String name;
-    //private Task[] assignedTasks;
     private ArrayList<Task> assignedTasks;
     
     // constructor
@@ -38,9 +28,6 @@ public class TeamMember {
     public String getName() {
         return name;
     }
-
-
-
 
     public ArrayList<Task> getTaskList() {
         return assignedTasks;

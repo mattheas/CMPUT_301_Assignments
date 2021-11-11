@@ -17,7 +17,7 @@ public class Task {
     // attributes
     private String title;
     private int effort;
-    private Task taskDependency = null;
+    private Task taskDependency;
     private ArrayList<TeamMember> assignedMembers;
 
     // constructors
