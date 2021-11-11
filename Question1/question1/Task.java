@@ -1,7 +1,18 @@
-
-
 import java.util.ArrayList;
 
+/**
+ * This class represents a task to be completed. A task has a name and an effort estimate in days. A task
+ * can have a task dependency, meaning another task must be completed before it can be completed. A task 
+ * may be assigned to zero, one or multiple team members. A task must have a name and effort estimate. A
+ * task dependency is optional and shall be assigned null by default if no task dependency is explicity given. 
+ * This class has an association relationship with the TeamMember class. 
+ *
+ * @author Mattheas Jamieson
+ * @see TeamMember
+ * @see Test
+ * @version 1.0
+ * @since 1.0
+ */
 public class Task {
     // attributes
     private String title;
@@ -9,11 +20,11 @@ public class Task {
     private Task taskDependency = null;
     private ArrayList<TeamMember> assignedMembers;
 
-
-    // constructor
+    // constructors
     public Task(String title, int effort) {
         this.title = title;
         this.effort = effort;
+        this.taskDependency = null;
         assignedMembers = new ArrayList<>();
     }
 
@@ -24,7 +35,6 @@ public class Task {
         assignedMembers = new ArrayList<>();
     }
 
-
     // methods
     public String getTitle() {
         return title;
@@ -34,7 +44,6 @@ public class Task {
         this.title = title;
     }
 
-
     public int getEffort() {
         return effort;
     }
@@ -42,7 +51,6 @@ public class Task {
     public void setEffort(int effort) {
         this.effort = effort;
     }
-
 
     public boolean isTaskDependencyNull() {
         if (taskDependency == null) {
@@ -59,7 +67,6 @@ public class Task {
     public void setTaskDependency(Task task) {
         taskDependency = task;
     }
-
 
     public ArrayList<TeamMember> getMemberList() {
         return assignedMembers;
